@@ -6,7 +6,7 @@ from langchain_core.vectorstores import InMemoryVectorStore
 load_dotenv()
 
 embedding = OpenAIEmbeddings(
-    model_name="text-embedding-3-large",
+    model="text-embedding-3-large",
 )
 
 vector_store = InMemoryVectorStore(embedding)
