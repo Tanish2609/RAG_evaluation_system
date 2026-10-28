@@ -1,11 +1,12 @@
+from dotenv import load_dotenv
 from file_reader import extract_paragraphs
-from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_openai import OpenAIEmbeddings
 from langchain_core.vectorstores import InMemoryVectorStore
 
+load_dotenv()
 
-embedding = HuggingFaceEmbeddings(
-    model_name="BAAI/bge-small-en-v1.5",
-    encode_kwargs={"normalize_embeddings": True},
+embedding = OpenAIEmbeddings(
+    model_name="text-embedding-3-large",
 )
 
 vector_store = InMemoryVectorStore(embedding)

@@ -26,3 +26,5 @@ def extract_paragraphs(pdf_path : str | Path) -> List[str]:
             if text:
                 paragraphs.append(text)
     return paragraphs
+
+# print(len(extract_paragraphs("../pdfs/Penguins_ACL.pdf")))
