@@ -1,4 +1,4 @@
-from indexing import vector_store
+from .indexing import vector_store
 from langchain.tools import tool
 
 last_retreieved_context = []
