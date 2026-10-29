@@ -1,5 +1,5 @@
 from dotenv import load_dotenv
-from file_reader import extract_paragraphs
+from .file_reader import extract_paragraphs
 from langchain_openai import OpenAIEmbeddings
 from langchain_core.vectorstores import InMemoryVectorStore
 
@@ -11,6 +11,6 @@ embedding = OpenAIEmbeddings(
 
 vector_store = InMemoryVectorStore(embedding)
 
-chunks = extract_paragraphs("../pdfs/Penguins_ACL.pdf")
+chunks = extract_paragraphs("pdfs/Penguins_ACL.pdf")
 vector_store.add_texts(texts=chunks)
 print(f"indexed {len(chunks)} chunks")
