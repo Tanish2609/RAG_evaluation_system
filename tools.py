@@ -1,4 +1,4 @@
-from .indexing import vector_store
+from .RAG1.indexing import vector_store
 from langchain.tools import tool
 
 last_retreieved_context = []
@@ -13,7 +13,7 @@ def collecting_info(query : str) -> str:
 
     global last_retreieved_context
 
-    docs = vector_store.similarity_search(query , k=3)
+    docs = vector_store.similarity_search(query , k=2)
 
     last_retreieved_context = [doc.page_content for doc in docs]
 
